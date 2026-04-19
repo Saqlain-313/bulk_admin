@@ -13,10 +13,11 @@ const router = express.Router();
 // 📊 ANALYSIS
 router.get("/analysis", protect, adminOnly, getImportUsersAnalysis);
 
+router.put("/bulk/status", protect, adminOnly, bulkUpdateStatus);
+
 // 🔄 UPDATE ONE
 router.put("/:id/status", protect, adminOnly, updateImportUserStatus);
 
 // 🔥 BULK UPDATE
-router.put("/bulk/status", protect, adminOnly, bulkUpdateStatus);
 
 export default router;
