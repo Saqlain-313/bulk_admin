@@ -35,8 +35,8 @@ const ImportUsers = () => {
 
   const data = (baseData || []).filter((u) => {
     const matchesSearch =
-      u.name?.toLowerCase().includes(search.toLowerCase()) ||
-      u.mobile?.toLowerCase().includes(search.toLowerCase()) ||
+      // u.name?.toLowerCase().includes(search.toLowerCase()) ||
+      // u.mobile?.toLowerCase().includes(search.toLowerCase()) ||
       u.uploadedByName?.toLowerCase().includes(search.toLowerCase());
 
     const matchesUser =
