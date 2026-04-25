@@ -51,16 +51,16 @@ app.use("/api/import-users", importUserRoutes);
 
 // ✅ STATIC SERVE (production)
 if (process.env.NODE_ENV === "production") {
-  const clientPath = path.join(__dirname, "Client", "dist");
+  const clientPath = path.join(__dirname, "client", "dist");
 
+  // 🔥 serve static files
   app.use(express.static(clientPath));
 
-  // 🔥 THIS IS THE ONLY SAFE WAY
+  // 🔥 React fallback
   app.use((req, res) => {
     res.sendFile(path.join(clientPath, "index.html"));
   });
 }
-
 // ✅ PORT
 const port = process.env.PORT || 5010;
 
